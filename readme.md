@@ -79,6 +79,24 @@ mvn quarkus:dev
 
 - `GET /api/v1/customers/` - Retrieve all customers
 
+## Test the API
+```
+$ curl -kv http://localhost:8080/api/v1/customers/*   Trying [::1]:8081...
+*   Trying 127.0.0.1:8080...
+* Connected to localhost (127.0.0.1) port 8080
+> GET /api/v1/customers/ HTTP/1.1
+> Host: localhost:8080
+> User-Agent: curl/8.4.0
+> Accept: */*
+>
+< HTTP/1.1 200 OK
+< Content-Type: application/json
+< content-length: 241
+<
+* Connection #0 to host localhost left intact
+[{"customerId":1,"customerName":"Ryoko Hirosue"},{"customerId":2,"customerName":"Kasumi Arimura"},{"customerId":3,"customerName":"Hikari Mitsushima"},{"customerId":4,"customerName":"Nanao Arai"},{"customerId":5,"customerName":"Mikako Tabe"}]                           
+```
+
 ## Docker
 
 Build and run using the provided Dockerfile:
