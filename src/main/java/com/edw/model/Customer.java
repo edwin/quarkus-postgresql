@@ -1,6 +1,9 @@
 package com.edw.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
@@ -14,6 +17,10 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name = "t_customer")
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Customer implements Serializable {
 
     @Id
@@ -23,28 +30,4 @@ public class Customer implements Serializable {
 
     @Column(name = "customer_name")
     private String customerName;
-
-    public Customer() {
-    }
-
-    public Customer(Long customerId, String customerName) {
-        this.customerId = customerId;
-        this.customerName = customerName;
-    }
-
-    public Long getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(Long customerId) {
-        this.customerId = customerId;
-    }
-
-    public String getCustomerName() {
-        return customerName;
-    }
-
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
-    }
 }
